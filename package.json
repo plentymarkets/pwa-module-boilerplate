@@ -1,0 +1,40 @@
+{
+  "name": "@plentymarkets/pwa-module-boilerplate",
+  "version": "1.0.0",
+  "license": "MIT",
+  "packageManager": "yarn@3.6.4",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/module.mjs",
+      "require": "./dist/module.cjs"
+    },
+    "./runtime/*": {
+      "import": "./dist/runtime/*",
+      "require": "./dist/runtime/*"
+    }
+  },
+  "main": "./dist/module.cjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "yarn": ">=3.6.1",
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "yarn dev:prepare && nuxt-module-build build",
+    "dev:prepare": "yarn nuxt-module-build build --stub && nuxi prepare"
+  },
+  "dependencies": {
+    "pathe": "^1.1.2"
+  },
+  "devDependencies": {
+    "@nuxt/module-builder": "0.8.4",
+    "@nuxtjs/i18n": "^9.1.0",
+    "nuxt": "^3.14.1592",
+    "typescript": "^5.7.2",
+    "vue": "^3.5.13"
+  }
+}
