@@ -25,7 +25,9 @@
   },
   "scripts": {
     "build": "yarn dev:prepare && nuxt-module-build build",
-    "dev:prepare": "yarn nuxt-module-build build --stub && nuxi prepare"
+    "dev:prepare": "yarn nuxt-module-build build --stub && nuxi prepare",
+    "format": "prettier --check \"**/*.{ts,vue,css,scss,md}\"",
+    "format:fix": "prettier --write \"**/*.{ts,vue,css,scss,md}\""
   },
   "dependencies": {
     "pathe": "^1.1.2"
@@ -33,7 +35,9 @@
   "devDependencies": {
     "@nuxt/module-builder": "0.8.4",
     "@nuxtjs/i18n": "^9.1.0",
+    "@nuxtjs/tailwindcss": "^6.12.0",
     "nuxt": "^3.14.1592",
+    "prettier": "^3.3.2",
     "typescript": "^5.7.2",
     "vue": "^3.5.13"
   }
