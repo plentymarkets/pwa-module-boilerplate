@@ -1,7 +1,7 @@
 <template>
   <div class="my-5">
     <UiButton @click="addCounter()">{{ $t('moduleBoilerplate.button') }}</UiButton>
-    <div>Composable useCart().data.sessionId: {{ cart.sessionId }}</div>
+    <div class="bg-red-200">Composable useCart().data.sessionId: {{ cart.sessionId }}</div>
     <div>Counter: {{ counter }}</div>
   </div>
 </template>

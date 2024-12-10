@@ -13,5 +13,5 @@ export const usePwaBoilerplateCounter = () => {
   return {
     ...toRefs(state.value),
     addCounter,
-  }
-}
+  };
+};
