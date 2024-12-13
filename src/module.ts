@@ -37,10 +37,6 @@ export default defineNuxtModule({
       logger.info('pwa-module-boilerplate is ready');
     });
 
-    /**
-     * Add the runtime components, composables and plugins
-     */
-    addImportsDir(resolve(runtimeDir, 'composables'));
     await Promise.all([
       addComponent({
         name: 'ModuleTest',

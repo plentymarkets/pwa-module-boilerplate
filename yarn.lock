@@ -1648,6 +1648,9 @@ __metadata:
     pathe: ^1.1.2
     typescript: ^5.7.2
     vue: ^3.5.13
+  peerDependencies:
+    nuxt: ^3.0.0
+    vue: ^3.0.0
   languageName: unknown
   linkType: soft
 

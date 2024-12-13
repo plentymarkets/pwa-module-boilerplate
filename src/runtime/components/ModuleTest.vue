@@ -5,10 +5,15 @@
     <div>Counter: {{ counter }}</div>
   </div>
 </template>
+
 <script setup lang="ts">
-import { useCart } from '~/composables/useCart';
 import { usePwaBoilerplateCounter } from '../composables/usePwaBoilerplateCounter';
+// import { ApiError } from '@plentymarkets/shop-api';
+// import { useCar } from
+// import {useCookie} from 'nuxt/app';
 
 const { data: cart } = useCart();
 const { counter, addCounter } = usePwaBoilerplateCounter();
+
+console.log('cristi', cart.value.sessionId);
 </script>

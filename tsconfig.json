@@ -1,5 +1,27 @@
 {
   "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@plentymarkets/plentyshop-pwa/*": ["../../plentyshop-pwa/*"]
+    },
+    // "paths": {
+    //   "#app/*": ["../../apps/web/*"],
+    //   "#components/*": ["../../apps/web/components/*"],
+    //   "#composables/*": ["../../apps/web/composables/*"]
+    // },
+    // "types": ["@plentymarkets/plentyshop-pwa"],
+    "declaration": true,
+    "declarationDir": "./dist",
+    "emitDeclarationOnly": true,
+    "outDir": "./dist",
+    "moduleResolution": "node",
+    "module": "ESNext",
+    "target": "ESNext",
+    "skipLibCheck": true,
+    "strict": true
+  },
+  "include": ["**/*.ts", ".nuxt/**/*.d.ts"],
   "exclude": [
     "dist",
     "node_modules"

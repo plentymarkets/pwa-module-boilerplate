@@ -4,6 +4,16 @@
   "license": "MIT",
   "packageManager": "yarn@3.6.4",
   "type": "module",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "main": "./dist/module.cjs",
+  "module": "./dist/module.mjs",
+  "types": "./dist/types.d.ts",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": "./dist/module.mjs",
@@ -14,21 +24,21 @@
       "require": "./dist/runtime/*"
     }
   },
-  "main": "./dist/module.cjs",
-  "types": "./dist/types.d.ts",
-  "files": [
-    "dist"
-  ],
   "engines": {
     "yarn": ">=3.6.1",
     "node": ">=20.0.0"
   },
   "scripts": {
-    "build": "yarn dev:prepare && nuxt-module-build build",
-    "dev:prepare": "yarn nuxt-module-build build --stub && nuxi prepare"
+    "build": "yarn dev:prepare && nuxt-module-build build && tsc --emitDeclarationOnly",
+    "dev:prepare": "yarn nuxt-module-build build --stub && nuxi prepare --watch",
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "pathe": "^1.1.2"
+  },
+  "peerDependencies": {
+    "nuxt": "^3.0.0",
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@nuxt/module-builder": "0.8.4",
