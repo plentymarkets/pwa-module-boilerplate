@@ -890,6 +890,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^1.6.0":
+  version: 1.6.8
+  resolution: "@floating-ui/core@npm:1.6.8"
+  dependencies:
+    "@floating-ui/utils": ^0.2.8
+  checksum: 82faa6ea9d57e466779324e51308d6d49c098fb9d184a08d9bb7f4fad83f08cc070fc491f8d56f0cad44a16215fb43f9f829524288413e6c33afcb17303698de
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^1.0.0":
+  version: 1.6.12
+  resolution: "@floating-ui/dom@npm:1.6.12"
+  dependencies:
+    "@floating-ui/core": ^1.6.0
+    "@floating-ui/utils": ^0.2.8
+  checksum: 956514ed100c0c853e73ace9e3c877b7e535444d7c31326f687a7690d49cb1e59ef457e9c93b76141aea0d280e83ed5a983bb852718b62eea581f755454660f6
+  languageName: node
+  linkType: hard
+
+"@floating-ui/utils@npm:^0.2.8":
+  version: 0.2.8
+  resolution: "@floating-ui/utils@npm:0.2.8"
+  checksum: deb98bba017c4e073c7ad5740d4dec33a4d3e0942d412e677ac0504f3dade15a68fc6fd164d43c93c0bb0bcc5dc5015c1f4080dfb1a6161140fe660624f7c875
+  languageName: node
+  linkType: hard
+
+"@floating-ui/vue@npm:^1.0.6":
+  version: 1.1.5
+  resolution: "@floating-ui/vue@npm:1.1.5"
+  dependencies:
+    "@floating-ui/dom": ^1.0.0
+    "@floating-ui/utils": ^0.2.8
+    vue-demi: ">=0.13.0"
+  checksum: e72835cbf6cb1196b6634a8b2f2b6aace268e9a9d99f221940d3c380ff337d25229a0dc06386538b081d6579cad6c4aa72b0129d02c19c710cbc7ea469d62aca
+  languageName: node
+  linkType: hard
+
 "@intlify/bundle-utils@npm:^9.0.0":
   version: 9.0.0
   resolution: "@intlify/bundle-utils@npm:9.0.0"
@@ -1160,6 +1197,18 @@ __metadata:
   bin:
     node-pre-gyp: bin/node-pre-gyp
   checksum: b848f6abc531a11961d780db813cc510ca5a5b6bf3184d72134089c6875a91c44d571ba6c1879470020803f7803609e7b2e6e429651c026fe202facd11d444b8
+  languageName: node
+  linkType: hard
+
+"@mertasan/tailwindcss-variables@npm:^2.5.2":
+  version: 2.7.0
+  resolution: "@mertasan/tailwindcss-variables@npm:2.7.0"
+  dependencies:
+    lodash: ^4.17.21
+  peerDependencies:
+    autoprefixer: ^10.0.2
+    postcss: ^8.0.9
+  checksum: 1e38761078a9d5466231069228e8e72d1fc4a721a80dd19d9259b39bdda7d0397e048ba82d46ecee2f031ecab78a6a2dff593d95ba7ae107e05d709584e43159
   languageName: node
   linkType: hard
 
@@ -1704,6 +1753,7 @@ __metadata:
     "@nuxt/module-builder": 0.8.4
     "@nuxtjs/i18n": ^9.1.0
     "@nuxtjs/tailwindcss": ^6.12.0
+    "@storefront-ui/vue": ^2.6.4
     nuxt: ^3.14.1592
     pathe: ^1.1.2
     prettier: ^3.3.2
@@ -2077,6 +2127,48 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storefront-ui/shared@npm:2.5.1":
+  version: 2.5.1
+  resolution: "@storefront-ui/shared@npm:2.5.1"
+  checksum: 8c5d5a4bbee2f19a2b76f5d248c1f008c1ce7854fc08abd3bd3fac250b2c905430b7450600a92e2e6664d1b9965335829ef217071fc61722caef959e38eaaa0e
+  languageName: node
+  linkType: hard
+
+"@storefront-ui/tailwind-config@npm:2.5.1":
+  version: 2.5.1
+  resolution: "@storefront-ui/tailwind-config@npm:2.5.1"
+  dependencies:
+    "@mertasan/tailwindcss-variables": ^2.5.2
+    "@storefront-ui/tw-plugin-peer-next": 2.3.3
+  checksum: 82b6a1419de1728f21b3f2e5a15ea12b81745b80d6f9522a0438e8b09b37f5a4d4a4898d82c911296b6bcee3661faa8ff1a456d7862aa42a3dd195e89fd47d22
+  languageName: node
+  linkType: hard
+
+"@storefront-ui/tw-plugin-peer-next@npm:2.3.3":
+  version: 2.3.3
+  resolution: "@storefront-ui/tw-plugin-peer-next@npm:2.3.3"
+  peerDependencies:
+    tailwindcss: ">=3.0.0 || >= 3.0.0-alpha.1"
+  checksum: 4cebcf94387c951b8005ff1141a109cfecbefce6fe5c4c54da3c6c543d81724cdee3f053ebe3ebe21daef7574f289107979a97b08c1107d0fce5099b0798cc1b
+  languageName: node
+  linkType: hard
+
+"@storefront-ui/vue@npm:^2.6.4":
+  version: 2.6.4
+  resolution: "@storefront-ui/vue@npm:2.6.4"
+  dependencies:
+    "@floating-ui/vue": ^1.0.6
+    "@storefront-ui/shared": 2.5.1
+    "@storefront-ui/tailwind-config": 2.5.1
+    "@vueuse/core": ^10.9.0
+    jw-paginate: ^1.0.4
+    tabbable: ^6.1.1
+  peerDependencies:
+    vue: ^3.4.27
+  checksum: 3cea6a12544d5c9dcd28b6fc37cf0c05ef89ca37b3a12d45598b76f4be0cd61960b8d0d3ad8a0ffeda74f98e3546f4d599f99c20ba6c2ccb1aa2ce48602e5f48
+  languageName: node
+  linkType: hard
+
 "@trysound/sax@npm:0.2.0":
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
@@ -2113,6 +2205,13 @@ __metadata:
   version: 1.20.2
   resolution: "@types/resolve@npm:1.20.2"
   checksum: 61c2cad2499ffc8eab36e3b773945d337d848d3ac6b7b0a87c805ba814bc838ef2f262fc0f109bfd8d2e0898ff8bd80ad1025f9ff64f1f71d3d4294c9f14e5f6
+  languageName: node
+  linkType: hard
+
+"@types/web-bluetooth@npm:^0.0.20":
+  version: 0.0.20
+  resolution: "@types/web-bluetooth@npm:0.0.20"
+  checksum: d6d61da683e876e8995ac57e2e5229d829d0f536deb3568d4430898fc626ebcb7e065fe7f655ac6a5205702f7f7049e6335abe689cd5291241eef6e39e8a4371
   languageName: node
   linkType: hard
 
@@ -2485,6 +2584,34 @@ __metadata:
   version: 3.5.13
   resolution: "@vue/shared@npm:3.5.13"
   checksum: b562499b3f1506fe41d37ecb27af6a35d6585457b6ebc52bd2acae37feea30225280968b36b1121c4ae1056c34d140aa525d9020ae558a4e557445290a31c6a9
+  languageName: node
+  linkType: hard
+
+"@vueuse/core@npm:^10.9.0":
+  version: 10.11.1
+  resolution: "@vueuse/core@npm:10.11.1"
+  dependencies:
+    "@types/web-bluetooth": ^0.0.20
+    "@vueuse/metadata": 10.11.1
+    "@vueuse/shared": 10.11.1
+    vue-demi: ">=0.14.8"
+  checksum: b1029259419e6556b988570d77d5d8fdbea3a8cd90d5fdb84c2a117b47aa02f8d8d67129f223c633a9f82314581fa849164aaee34cd9d8fc644c35c2883bd877
+  languageName: node
+  linkType: hard
+
+"@vueuse/metadata@npm:10.11.1":
+  version: 10.11.1
+  resolution: "@vueuse/metadata@npm:10.11.1"
+  checksum: bca5dd08c6ce80233bfde586270229bba44b0e80b22e512df1fc3d98bbd36f0ada6fbb5e6a86db300c69e4ea2cada30d59c2f77cd642f7dd721aef1d7d867954
+  languageName: node
+  linkType: hard
+
+"@vueuse/shared@npm:10.11.1":
+  version: 10.11.1
+  resolution: "@vueuse/shared@npm:10.11.1"
+  dependencies:
+    vue-demi: ">=0.14.8"
+  checksum: c8553126ba2a260fee6bc1798c67f6d90295021bb25c72218c87e169f7d7374bac0777a9f64670f4126f5c7e9c2ec603286ed1810cb8c7961f4b44e4cd4d6f4f
   languageName: node
   linkType: hard
 
@@ -5358,6 +5485,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jw-paginate@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "jw-paginate@npm:1.0.4"
+  checksum: 4a34834f532f4b13f7e6b5f8c1572504536576597953db4e6e9d57cad974f7078bd118a25039eaad074845f9893944735501ecc8f98d27e383dd2683d6765dcd
+  languageName: node
+  linkType: hard
+
 "keygrip@npm:~1.1.0":
   version: 1.1.0
   resolution: "keygrip@npm:1.1.0"
@@ -8084,6 +8218,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tabbable@npm:^6.1.1":
+  version: 6.2.0
+  resolution: "tabbable@npm:6.2.0"
+  checksum: f8440277d223949272c74bb627a3371be21735ca9ad34c2570f7e1752bd646ccfc23a9d8b1ee65d6561243f4134f5fbbf1ad6b39ac3c4b586554accaff4a1300
+  languageName: node
+  linkType: hard
+
 "tailwind-config-viewer@npm:^2.0.4":
   version: 2.0.4
   resolution: "tailwind-config-viewer@npm:2.0.4"
@@ -8976,6 +9117,22 @@ __metadata:
   dependencies:
     ufo: ^1.5.4
   checksum: 07822475d57c96a91aa7e61f60e5e1dc04a285f3132f4e133765824522f35b5c1a003429fbdd92c8c386f36f1eabccf711171f5941c74dad27e1b656c2ce7094
+  languageName: node
+  linkType: hard
+
+"vue-demi@npm:>=0.13.0, vue-demi@npm:>=0.14.8":
+  version: 0.14.10
+  resolution: "vue-demi@npm:0.14.10"
+  peerDependencies:
+    "@vue/composition-api": ^1.0.0-rc.1
+    vue: ^3.0.0-0 || ^2.6.0
+  peerDependenciesMeta:
+    "@vue/composition-api":
+      optional: true
+  bin:
+    vue-demi-fix: bin/vue-demi-fix.js
+    vue-demi-switch: bin/vue-demi-switch.js
+  checksum: 9b4106f99be3b0c1dd4a6dc5725f5e8f79c6b98d1eeb849bf2c54416cd77f4aa344960b202768865245cfa82d57f49a9d96f67f5d8e256604b9dac1c5df9a8d6
   languageName: node
   linkType: hard
 
