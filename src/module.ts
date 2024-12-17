@@ -8,8 +8,10 @@ import {
   addRouteMiddleware,
   addComponent,
 } from '@nuxt/kit';
-import type { Component as NuxtComponent } from '@nuxt/schema';
+import type { NuxtPage } from '@nuxt/schema';
 import type { TailwindColors } from '~/src/types';
+import type { Config as TailwindConfig, ContentConfig } from 'tailwindcss/types/config';
+import { fileURLToPath } from 'node:url';
 
 export default defineNuxtModule({
   meta: {
@@ -24,11 +26,17 @@ export default defineNuxtModule({
     /**
      * Hook to modify the TailwindCSS configuration
      */
-    nuxt.hook('tailwindcss:config', (config) => {
+    nuxt.hook('tailwindcss:config', (config: Partial<TailwindConfig>) => {
+      console.log('modify tailwindcss config');
+      console.log(config);
+
       // Add the runtime components to the TailwindCSS content to enable Tailwind classes in the components
       if (config.content) {
-        (config.content as string[]).push(resolve('./runtime/**/*.{vue,mjs,ts}'));
-        (config.content as string[]).push(resolve('./runtime/**/*.{mjs,js,ts}'));
+        if (!Array.isArray(config.content)) {
+        } else {
+          (config.content as string[]).push(resolve('./runtime/**/*.{vue,mjs,ts}'));
+          (config.content as string[]).push(resolve('./runtime/**/*.{mjs,js,ts}'));
+        }
       }
 
       // Override the primary-500 color
@@ -41,6 +49,7 @@ export default defineNuxtModule({
      * Register the module specific language files to the existing i18n module
      */
     nuxt.hook('i18n:registerModule', (register) => {
+      console.log('register i18n languages');
       register({
         langDir: resolve('./runtime/lang'),
         locales: [
@@ -70,10 +79,16 @@ export default defineNuxtModule({
       }
     });
 
-    extendPages((pages) => {
+    extendPages((pages: NuxtPage[]) => {
       const indexPage = pages.find((p) => p.name === 'index');
       if (indexPage) {
         indexPage.file = resolve('./runtime/pages/index.vue');
+      } else {
+        pages.push({
+          name: 'index',
+          file: resolve('./runtime/pages/index.vue'),
+          path: '/',
+        });
       }
     });
 
@@ -89,6 +104,7 @@ export default defineNuxtModule({
      */
     addImportsDir(resolve('./runtime/composables'));
     addPlugin(resolve('./runtime/plugins/registerCookies'));
+
     addRouteMiddleware({
       name: 'example-middleware',
       path: resolve('./runtime/middleware/example-middleware'),
