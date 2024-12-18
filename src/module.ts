@@ -9,9 +9,8 @@ import {
   addComponent,
 } from '@nuxt/kit';
 import type { NuxtPage } from '@nuxt/schema';
-import type { TailwindColors } from '~/src/types';
-import type { Config as TailwindConfig, ContentConfig } from 'tailwindcss/types/config';
-import { fileURLToPath } from 'node:url';
+import type { TailwindColors } from './types';
+import type { Config as TailwindConfig } from 'tailwindcss/types/config';
 
 export default defineNuxtModule({
   meta: {
@@ -31,12 +30,9 @@ export default defineNuxtModule({
       console.log(config);
 
       // Add the runtime components to the TailwindCSS content to enable Tailwind classes in the components
-      if (config.content) {
-        if (!Array.isArray(config.content)) {
-        } else {
-          (config.content as string[]).push(resolve('./runtime/**/*.{vue,mjs,ts}'));
-          (config.content as string[]).push(resolve('./runtime/**/*.{mjs,js,ts}'));
-        }
+      if (config.content && Array.isArray(config.content)) {
+        (config.content as string[]).push(resolve('./runtime/**/*.{vue,mjs,ts}'));
+        (config.content as string[]).push(resolve('./runtime/**/*.{mjs,js,ts}'));
       }
 
       // Override the primary-500 color
